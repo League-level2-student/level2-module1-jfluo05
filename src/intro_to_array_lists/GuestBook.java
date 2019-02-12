@@ -53,8 +53,7 @@ public class GuestBook implements ActionListener {
 		// user to enter a name. Add
 		// that name to an ArrayList.
 		if (e.getSource() == addGuestButton) {
-			guest1 = JOptionPane.showInputDialog("Enter a name...");
-			guestBook.add(guest1);
+			addGuests();
 		}
 
 		// When the "View Names" button is clicked, display a message dialog that
@@ -70,10 +69,8 @@ public class GuestBook implements ActionListener {
 	}
 
 	void addGuests() {
-
-		guestBook.add(guest2);
-		guestBook.add(guest3);
-		guestBook.add(guest4);
+		guest1 = JOptionPane.showInputDialog("Enter the name of your first guest...");
+		guestBook.add(guest1);
 	}
 
 	void viewGuests() {
@@ -82,6 +79,6 @@ public class GuestBook implements ActionListener {
 			String s = guestBook.get(i);
 			message += "Guest #" + (i + 1) + ": " + s + "\n";
 		}
-		JOptionPane.showMessageDialog(null, "");
+		JOptionPane.showMessageDialog(null, message);
 	}
 }
